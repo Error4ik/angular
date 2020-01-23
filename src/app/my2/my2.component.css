@@ -1,0 +1,21 @@
+.my-component {
+  width: 800px;
+  border: 1rem dashed #1f2dff;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.my-component h2 {
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: green;
+  text-align: center;
+}
+
+.my-component p {
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  color: #2d29d2;
+  font-weight: bold;
+}
