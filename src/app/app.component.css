@@ -291,3 +291,11 @@ svg#clouds {
 .cls-2 {
   fill: #ffffff;
 }
+
+.content div {
+  padding: 10px;
+}
+
+.content label {
+  padding: 10px;
+}
