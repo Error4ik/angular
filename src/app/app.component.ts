@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +15,15 @@ export class AppComponent {
     pets: {cat: 'bob', dog: 'mal'}
   };
   json = JSON.stringify(this.user);
+
+  angularLogo = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/240px-Angular_full_color_logo.svg.png';
+  javaScriptLogo = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/240px-JavaScript-logo.png';
+
+  img = this.angularLogo;
+
+  constructor() {
+    setInterval(() => {
+      this.img === this.angularLogo ? this.img = this.javaScriptLogo : this.img = this.angularLogo;
+    }, 1000);
+  }
 }
