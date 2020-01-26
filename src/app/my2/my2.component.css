@@ -2,7 +2,8 @@
   width: 800px;
   border: 1px dashed #1f2dff;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 10px;
+  margin: 10px;
 }
 
 .my-component h2 {
@@ -18,4 +19,41 @@
   font-size: 30px;
   color: #2d29d2;
   font-weight: bold;
+}
+
+button {
+  margin: 1rem;
+}
+
+.red {
+  background: red;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px;
+  color: white;
+  margin: 10px;
+}
+
+.green {
+  background: green;
+  font-size: 2rem;
+  padding: 10px;
+  color: white;
+  margin: 10px;
+}
+
+.my-component2 {
+  margin: 10px;
+  width: 800px;
+  border: 1px dashed #1f2dff;
+  border-radius: 1rem;
+  padding: 10px;
+}
+
+.my-component3 {
+  margin: 10px;
+  width: 800px;
+  border: 1px dashed #1f2dff;
+  border-radius: 1rem;
+  padding: 10px;
 }

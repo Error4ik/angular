@@ -1,4 +1,63 @@
-<div class="my-component">
-  <input type="text" [(ngModel)]="title">
-  <p>{{ title }}</p>
+<!--<div class="my-component">-->
+
+<!--  <button (click)="backgroundToggle = !backgroundToggle">Toggle</button>-->
+
+<!--  <div [ngStyle]="{-->
+<!--  width: '100px',-->
+<!--  height: '100px',-->
+<!--  border: '1px solid black',-->
+<!--  borderRadius: '7px',-->
+<!--  background: backgroundToggle ? 'yellow' : 'blue'-->
+<!--  }">-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="my-component2">-->
+<!--  <p [ngClass]="{red: backgroundToggle, green: !backgroundToggle}">Lorem ipsum dolor sit amet, consectetur adipisicing-->
+<!--    elit. Sapiente, ullam.</p>-->
+<!--  <p-->
+<!--    [class.green]="!backgroundToggle"-->
+<!--    [class.red]="backgroundToggle">-->
+<!--    Lorem ipsum dolor sit amet.-->
+<!--  </p>-->
+<!--</div>-->
+
+<div class="my-component3">
+<!--  <div>-->
+<!--    <button (click)="toggle = !toggle">Toggle</button>-->
+<!--    <button (click)="toggle = 111">Set 1</button>-->
+<!--  </div>-->
+  <!--  &lt;!&ndash;  //TODO Условия&ndash;&gt;-->
+  <!--  &lt;!&ndash;  <p *ngIf="toggle" class="green">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>&ndash;&gt;-->
+  <!--  &lt;!&ndash;  <p *ngIf="!toggle" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>&ndash;&gt;-->
+
+  <!--  &lt;!&ndash;  //TODO В блоке else ссылка на контейнер.&ndash;&gt;-->
+  <!--  <p *ngIf="!toggle; else greenP" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>-->
+  <!--  &lt;!&ndash; //TODO Контейнер.&ndash;&gt;-->
+  <!--  <ng-template #greenP>-->
+  <!--    <p class="green">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>-->
+  <!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eius-->
+  <!--      pariatur porro quas suscipit unde voluptatum. A cupiditate nemo placeat.-->
+  <!--    </p>-->
+  <!--  </ng-template>-->
+
+  <!--&lt;!&ndash; //TODO ngSwitch&ndash;&gt;-->
+  <!--  <div [ngSwitch]="toggle">-->
+  <!--    <p *ngSwitchCase="true" class="red">Lorem ipsum dolor sit amet. 111</p>-->
+  <!--    <p *ngSwitchCase="false" class="green">Lorem ipsum dolor sit amet, 5555</p>-->
+  <!--    <p *ngSwitchDefault>Lorem. Default</p>-->
+  <!--  </div>-->
+
+  <!--  //TODO ngFor-->
+  <ul>
+    <li *ngFor="let item of array; let i = index">
+      <strong>{{item}} index = {{i + 1}}</strong>
+    </li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let item of object">
+      {{ item.title }}
+    </li>
+  </ul>
 </div>
