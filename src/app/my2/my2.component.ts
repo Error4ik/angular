@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-my2',
@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./my2.component.css']
 })
 export class My2Component {
+  title = 'Hello';
 }

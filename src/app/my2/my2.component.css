@@ -1,6 +1,6 @@
 .my-component {
   width: 800px;
-  border: 1rem dashed #1f2dff;
+  border: 1px dashed #1f2dff;
   border-radius: 1rem;
   padding: 2rem;
 }

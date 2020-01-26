@@ -47,26 +47,7 @@
   </div>
 
   <!-- Resources -->
-  <div>
-    <div>
-      <label for="name">Input</label>
-      <input type="text" id="name" (input)="onInput($event)">
-    </div>
-    <p>{{ inputValue }}</p>
-    <div>
-      <button (click)="onCLick()">Click me</button>
-    </div>
-    <div>
-      <label for="name2">Input</label>
-      <input
-        id="name2"
-        type="text"
-        (keyup.enter)="onInput2($event)"
-        (blur)="onBlur(myInput.value)"
-        #myInput
-      >
-    </div>
-  </div>
+  <app-my2></app-my2>
 
   <!-- Footer -->
   <footer>
