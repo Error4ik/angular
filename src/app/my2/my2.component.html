@@ -48,16 +48,22 @@
   <!--    <p *ngSwitchDefault>Lorem. Default</p>-->
   <!--  </div>-->
 
-  <!--  //TODO ngFor-->
-  <ul>
-    <li *ngFor="let item of array; let i = index">
-      <strong>{{item}} index = {{i + 1}}</strong>
-    </li>
-  </ul>
+<!--  &lt;!&ndash;  //TODO ngFor&ndash;&gt;-->
+<!--  <ul>-->
+<!--    <li *ngFor="let item of array; let i = index">-->
+<!--      <strong>{{item}} index = {{i + 1}}</strong>-->
+<!--    </li>-->
+<!--  </ul>-->
 
-  <ul>
-    <li *ngFor="let item of object">
-      {{ item.title }}
-    </li>
-  </ul>
+<!--  <ul>-->
+<!--    <li *ngFor="let item of object">-->
+<!--      {{ item.title }}-->
+<!--    </li>-->
+<!--  </ul>-->
+
+  <p>{{ now }}</p>
+  <p>{{ now | date }}</p>
+  <p>{{ now | date:'small' }}</p>
+  <p>{{ now | date:'long' }}</p>
+  <p>{{ now | date:'long' | uppercase }}</p>
 </div>
