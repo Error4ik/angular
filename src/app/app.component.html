@@ -9,9 +9,11 @@
     *ngFor="let p of posts"
     [post]="p"
   >
-    <small *ngIf="p.text.length > 10; else short">big</small>
-    <ng-template #short>
-      <small>short</small>
-    </ng-template>
+    <div #info>
+      <small *ngIf="p.text.length > 10; else short">big</small>
+      <ng-template #short>
+        <small>short</small>
+      </ng-template>
+    </div>
   </app-post>
 </div>
