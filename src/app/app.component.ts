@@ -42,14 +42,14 @@ export class AppComponent implements OnInit {
     //   this.posts[0].title = 'Changed!';
     // }, 5000);
 
-    // TODO ChangeDetectionStrategy.onPush.
-    setTimeout(() => {
-      console.log('Timeout');
-      this.posts[0] = {
-        title: 'Changed',
-        text: 'Changed',
-        id: 5
-      };
-    }, 5000);
+    // // TODO ChangeDetectionStrategy.onPush.
+    // setTimeout(() => {
+    //   console.log('Timeout');
+    //   this.posts[0] = {
+    //     title: 'Changed',
+    //     text: 'Changed',
+    //     id: 5
+    //   };
+    // }, 5000);
   }
 }
