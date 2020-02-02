@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 
 export interface Post {
   title: string;
@@ -11,7 +11,7 @@ export interface Post {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   name = 'Test';
 
   posts: Post[] = [
@@ -33,5 +33,23 @@ export class AppComponent {
 
   removePost(id: number) {
     this.posts = this.posts.filter(p => p.id !== id);
+  }
+
+  ngOnInit(): void {
+    // // TODO ChangeDetectionStrategy.Default.
+    // setTimeout(() => {
+    //   console.log('Timeout');
+    //   this.posts[0].title = 'Changed!';
+    // }, 5000);
+
+    // TODO ChangeDetectionStrategy.onPush.
+    setTimeout(() => {
+      console.log('Timeout');
+      this.posts[0] = {
+        title: 'Changed',
+        text: 'Changed',
+        id: 5
+      };
+    }, 5000);
   }
 }
