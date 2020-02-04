@@ -1,21 +1,4 @@
 <div class="container">
   <h1>{{name}}</h1>
-  <h2>SubHeader</h2>
-
-  <app-post-form
-    (onAdd)="updatePosts($event)"
-  ></app-post-form>
-  <hr/>
-  <app-post
-    *ngFor="let p of posts"
-    [post]="p"
-    (remove)="removePost($event)"
-  >
-    <div #info>
-      <small *ngIf="p.text.length > 10; else short">big</small>
-      <ng-template #short>
-        <small>short</small>
-      </ng-template>
-    </div>
-  </app-post>
+  <p appStyle>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, obcaecati.</p>
 </div>
