@@ -5,7 +5,7 @@ import {Directive, ElementRef, HostListener, Input, Renderer2} from '@angular/co
 })
 export class StyleDirective {
   @Input('appStyle') color;
-  @Input('appStyle2') appStyle2 = {border: '', borderRadius: '', fontWeight: ''};
+  @Input() appStyle2 = {border: '', borderRadius: '', fontWeight: ''};
 
   constructor(private el: ElementRef, private renderer: Renderer2) {
     this.renderer.setStyle(el.nativeElement, 'color', '#ff9e4a');
