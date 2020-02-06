@@ -7,6 +7,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
   name = 'Angular Pipes';
+  e: number = Math.E;
 
   ngOnInit(): void {
   }
