@@ -6,8 +6,7 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  name = 'Angular Directives';
-  isVisible = true;
+  name = 'Angular Pipes';
 
   ngOnInit(): void {
   }
