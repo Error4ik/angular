@@ -1,10 +1,7 @@
 <div class="container">
   <h1>{{name}}</h1>
   <hr>
-  <input type="text" [(ngModel)]="search">
-  <div *ngFor="let post of posts | filter: search"
-    class="card">
-    <h2>{{post.title}}</h2>
-    <p>{{post.text}}</p>
-  </div>
+  <p>Wait... {{promise | async}}</p>
+  <p>Wait... {{date$ | async | date: 'HH:mm:ss'}}</p>
+  <p>Wait... {{date | date: 'HH:mm:ss'}}</p>
 </div>

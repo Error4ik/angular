@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
 export interface Post {
   title: string;
   text: string;
@@ -11,14 +12,24 @@ export interface Post {
 })
 export class AppComponent implements OnInit {
   name = 'Angular Pipes';
-  search = '';
 
-  posts: Post [] = [
-    {title: 'Meat', text: 'beef'},
-    {title: 'Bread', text: 'grain bread'},
-    {title: 'Milk', text: 'cow\'s milk'},
-  ];
+  promise: Promise<string> = new Promise<string>(resolve => {
+    setTimeout(() => {
+      resolve('resolved!');
+    }, 3000);
+  });
+
+  date$: Observable<Date> = new Observable<Date>(obs => {
+    setInterval(() => {
+      obs.next(new Date());
+    }, 1000);
+  });
+
+  date = new Date();
 
   ngOnInit(): void {
+    this.date$.subscribe(date => {
+      this.date = date;
+    });
   }
 }
