@@ -1,4 +1,8 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+export interface Post {
+  title: string;
+  text: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -7,6 +11,13 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
   name = 'Angular Pipes';
+  search = '';
+
+  posts: Post [] = [
+    {title: 'Meat', text: 'beef'},
+    {title: 'Bread', text: 'grain bread'},
+    {title: 'Milk', text: 'cow\'s milk'},
+  ];
 
   ngOnInit(): void {
   }
