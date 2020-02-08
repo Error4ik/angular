@@ -1,7 +1,9 @@
 <div class="container">
   <h1>{{name}}</h1>
   <hr>
-  <p>Wait... {{promise | async}}</p>
-  <p>Wait... {{date$ | async | date: 'HH:mm:ss'}}</p>
-  <p>Wait... {{date | date: 'HH:mm:ss'}}</p>
+  <div class="card">
+    <h1>App counter: {{appCounterService.counter}}</h1>
+    <button class="btn" (click)="appCounterService.increase()">Increase</button>
+    <button class="btn" (click)="appCounterService.decrease()">Decrease</button>
+  </div>
 </div>
