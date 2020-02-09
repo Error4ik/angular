@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,13 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
   name = 'Angular Forms';
-
-  constructor() {
-  }
+  form: FormGroup;
 
   ngOnInit(): void {
+    this.form = new FormGroup({});
+  }
+
+  send() {
+    console.log('Form submitted', this.form);
   }
 }

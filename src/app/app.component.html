@@ -1,7 +1,7 @@
 <div class="container">
   <h1>{{name}}</h1>
   <hr>
-  <form class="card">
+  <form class="card" [formGroup]="form" (ngSubmit)="send()">
     <div class="form-control">
       <label for="email">Email</label>
       <input id="email" type="text" placeholder="Email">
@@ -27,16 +27,16 @@
       <div class="form-control">
         <input type="text">
       </div>
-      <button class="btn">Select capital</button>
+      <button class="btn" type="button">Select capital</button>
     </div>
     <div class="card">
       <h2>Your skill</h2>
-      <button class="btn">Add skill</button>
+      <button class="btn" type="button">Add skill</button>
       <div class="form-control">
         <label for="skill"></label>
         <input id="skill" type="text">
       </div>
     </div>
-    <button class="btn">Send</button>
+    <button class="btn" type="submit">Send</button>
   </form>
 </div>
