@@ -56,6 +56,21 @@ img {
   margin-top: 0.3rem;
 }
 
+.form-control .label {
+  display: block;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+.form-control .input {
+  margin-bottom: 0;
+}
+
+.form-control .validation {
+  color: red;
+}
+
 .card {
   padding: 1rem;
   border: #ccc 1px dotted;

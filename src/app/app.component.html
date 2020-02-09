@@ -1,17 +1,42 @@
 <div class="container">
   <h1>{{name}}</h1>
   <hr>
-  <div class="card">
-    <h1>App counter: {{appCounterService.counter}}</h1>
-    <button class="btn" (click)="appCounterService.increase()">Increase</button>
-    <button class="btn" (click)="appCounterService.decrease()">Decrease</button>
-  </div>
-  <hr>
-  <div class="card">
-    <h1>Local counter: {{localCounterService.counter}}</h1>
-    <button class="btn" (click)="localCounterService.increase()">Increase</button>
-    <button class="btn" (click)="localCounterService.decrease()">Decrease</button>
-  </div>
-  <hr>
-  <app-counter></app-counter>
+  <form class="card">
+    <div class="form-control">
+      <label for="email">Email</label>
+      <input id="email" type="text" placeholder="Email">
+      <div class="validation"></div>
+    </div>
+    <div class="form-control">
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="pass">
+      <div class="validation"></div>
+    </div>
+
+    <div class="card">
+      <h2>Address</h2>
+      <div class="form-control">
+        <label for="country">Country</label>
+        <select id="country">
+          <option value="ru">Russia</option>
+          <option value="ua">Ukraine</option>
+          <option value="us">USA</option>
+        </select>
+      </div>
+
+      <div class="form-control">
+        <input type="text">
+      </div>
+      <button class="btn">Select capital</button>
+    </div>
+    <div class="card">
+      <h2>Your skill</h2>
+      <button class="btn">Add skill</button>
+      <div class="form-control">
+        <label for="skill"></label>
+        <input id="skill" type="text">
+      </div>
+    </div>
+    <button class="btn">Send</button>
+  </form>
 </div>
