@@ -18,8 +18,10 @@ export class AppComponent implements OnInit {
   }
 
   send() {
-    console.log('Form:', this.form);
-    const formData = {...this.form.value};
-    console.log('FormData:', formData);
+    if (this.form.valid) {
+      console.log('Form:', this.form);
+      const formData = {...this.form.value};
+      console.log('FormData:', formData);
+    }
   }
 }
