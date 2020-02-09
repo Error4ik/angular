@@ -47,6 +47,12 @@ img {
   outline: none;
 }
 
+.btn:disabled {
+  background: #ccc;
+  color: #000;
+  cursor: not-allowed;
+}
+
 .btn:hover {
   opacity: 0.8;
 }
