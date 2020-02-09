@@ -4,12 +4,12 @@
   <form class="card" [formGroup]="form" (ngSubmit)="send()">
     <div class="form-control">
       <label for="email">Email</label>
-      <input id="email" type="text" placeholder="Email">
+      <input id="email" type="text" placeholder="Email" formControlName="email">
       <div class="validation"></div>
     </div>
     <div class="form-control">
       <label for="password">Password</label>
-      <input id="password" type="password" placeholder="pass">
+      <input id="password" type="password" placeholder="pass" formControlName="password">
       <div class="validation"></div>
     </div>
 
