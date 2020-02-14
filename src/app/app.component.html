@@ -28,11 +28,11 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" formGroupName="address">
       <h2>Address</h2>
       <div class="form-control">
         <label for="country">Country</label>
-        <select id="country">
+        <select id="country" formControlName="country">
           <option value="ru">Russia</option>
           <option value="ua">Ukraine</option>
           <option value="us">USA</option>
@@ -40,7 +40,7 @@
       </div>
 
       <div class="form-control">
-        <input type="text">
+        <input type="text" formControlName="city" placeholder="city">
       </div>
       <button class="btn" type="button">Select capital</button>
     </div>
