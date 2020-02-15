@@ -13,7 +13,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      email: new FormControl('', [Validators.email, Validators.required, AppValidators.restrictedEmails]),
+      email: new FormControl('',
+        [Validators.email,
+          Validators.required,
+          AppValidators.restrictedEmails],
+        [AppValidators.uniqueEmail]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
       address: new FormGroup({
         country: new FormControl('ru'),

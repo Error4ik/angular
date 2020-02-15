@@ -15,6 +15,9 @@
         <small *ngIf="form.get('email').errors.restrictedEmail">
           The email {{form.get('email').value}} is restricted.
         </small>
+        <small *ngIf="form.get('email').errors.uniqueEmail">
+          The email {{form.get('email').value}} is not unique.
+        </small>
       </div>
     </div>
     <div class="form-control">
@@ -55,6 +58,6 @@
         <input id="skill" type="text" [formControlName]="i">
       </div>
     </div>
-    <button class="btn" type="submit" [disabled]="form.invalid">Send</button>
+    <button class="btn" type="submit" [disabled]="form.invalid || form.pending">Send</button>
   </form>
 </div>
