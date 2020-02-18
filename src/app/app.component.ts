@@ -39,10 +39,11 @@ export class AppComponent implements OnInit {
       completed: false
     };
 
-    this.http.post<Todo>('https://jsonplaceholder.typicode.com/todos', newTodo).subscribe(response => {
-      this.todoList.push(response);
-      this.todoTitle = '';
-    });
+    this.http.post<Todo>('https://jsonplaceholder.typicode.com/todos', newTodo)
+      .subscribe(response => {
+        this.todoList.push(response);
+        this.todoTitle = '';
+      });
   }
 
   fetchTodoList() {
@@ -52,6 +53,13 @@ export class AppComponent implements OnInit {
       .subscribe(response => {
         this.todoList = response;
         this.loading = false;
+      });
+  }
+
+  deleteTodo(id: number) {
+    this.http.delete<void>(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .subscribe(() => {
+        this.todoList = this.todoList.filter(todo => todo.id !== id);
       });
   }
 }
