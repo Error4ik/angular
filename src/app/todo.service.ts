@@ -22,7 +22,13 @@ export class TodoService {
       .pipe(delay(500));
   }
 
-  deleteTodo(id: number): Observable<void> {
+  removeTodo(id: number): Observable<void> {
     return this.httpClient.delete<void>(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  }
+
+  completeTodo(id: number): Observable<Todo> {
+    return this.httpClient.put<Todo>(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+      completed: true
+    });
   }
 }

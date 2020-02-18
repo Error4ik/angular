@@ -50,10 +50,17 @@ export class AppComponent implements OnInit {
       });
   }
 
-  deleteTodo(id: number) {
-    this.todoService.deleteTodo(id)
+  removeTodo(id: number) {
+    this.todoService.removeTodo(id)
       .subscribe(() => {
         this.todoList = this.todoList.filter(todo => todo.id !== id);
+      });
+  }
+
+  completeTodo(id: number) {
+    this.todoService.completeTodo(id)
+      .subscribe(todo => {
+        this.todoList.find(t => t.id === todo.id).completed = true;
       });
   }
 }
