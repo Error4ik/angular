@@ -9,24 +9,26 @@
     <button class="btn" (click)="fetchTodoList()">Upload</button>
   </div>
   <hr>
-  <div *ngIf="!loading; else loadingBlock">
-    <div *ngIf="todoList.length !== 0; else noTodo">
-      <div class="card" *ngFor="let todo of todoList">
-        <p>
-          <span [class.completed]="todo.completed">{{todo.title | titlecase}}</span>
-          <span>
+  <p class="error" *ngIf="error; else todoBlock">{{error}}</p>
+  <ng-template #todoBlock>
+    <div *ngIf="!loading; else loadingBlock">
+      <div *ngIf="todoList.length !== 0; else noTodo">
+        <div class="card" *ngFor="let todo of todoList">
+          <p>
+            <span [class.completed]="todo.completed">{{todo.title | titlecase}}</span>
+            <span>
         <button class="btn btn-danger" (click)="removeTodo(todo.id)">Remove</button>
         <button class="btn" [disabled]="todo.completed" (click)="completeTodo(todo.id)">Complete</button>
       </span>
-        </p>
+          </p>
+        </div>
       </div>
+      <ng-template #noTodo>
+        <p>Empty list...</p>
+      </ng-template>
     </div>
-  </div>
-
-  <ng-template #loadingBlock>
-    <p>Loading...</p>
-  </ng-template>
-  <ng-template #noTodo>
-    <p>Empty list...</p>
+    <ng-template #loadingBlock>
+      <p>Loading...</p>
+    </ng-template>
   </ng-template>
 </div>

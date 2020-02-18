@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {delay} from 'rxjs/operators';
+import {Observable, throwError} from 'rxjs';
+import {catchError, delay} from 'rxjs/operators';
 
 export interface Todo {
   id?: number;
@@ -11,7 +11,8 @@ export interface Todo {
 
 @Injectable({providedIn: 'root'})
 export class TodoService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {
+  }
 
   addTodo(todo: Todo): Observable<Todo> {
     return this.httpClient.post<Todo>('https://jsonplaceholder.typicode.com/todos', todo);
@@ -29,6 +30,10 @@ export class TodoService {
   completeTodo(id: number): Observable<Todo> {
     return this.httpClient.put<Todo>(`https://jsonplaceholder.typicode.com/todos/${id}`, {
       completed: true
-    });
+    }).pipe(catchError(error => {
+      console.log('Error:', error.message);
+      error.message = 'Something went wrong...';
+      return throwError(error);
+    }));
   }
 }

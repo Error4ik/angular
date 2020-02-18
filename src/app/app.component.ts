@@ -17,6 +17,8 @@ export class AppComponent implements OnInit {
 
   todoTitle = '';
 
+  error = '';
+
   constructor(private todoService: TodoService) {
   }
 
@@ -61,6 +63,8 @@ export class AppComponent implements OnInit {
     this.todoService.completeTodo(id)
       .subscribe(todo => {
         this.todoList.find(t => t.id === todo.id).completed = true;
+      }, error => {
+        this.error = error.message;
       });
   }
 }
