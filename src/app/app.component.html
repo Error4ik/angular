@@ -1,7 +1,21 @@
 <div class="container">
   <h1>{{name}}</h1>
   <hr>
-  <app-switch [(ngModel)]="appState" (ngModelChange)="handleChange()"></app-switch>
+  <div class="card">
+    <div class="form-control">
+      <input type="text" placeholder="Title">
+    </div>
+    <button class="btn">Add</button>
+    <button class="btn">Upload</button>
+  </div>
   <hr>
-  <p>{{appState}}</p>
+  <div class="card" *ngFor="let todo of todos">
+    <p>
+      <span [class.completed]="todo.completed">{{todo.title | titlecase}}</span>
+      <span>
+        <button class="btn btn-danger">Delete</button>
+        <button class="btn" [disabled]="todo.completed">Complete</button>
+      </span>
+    </p>
+  </div>
 </div>

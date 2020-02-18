@@ -1,5 +1,11 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+
+export interface Todo {
+  id?: number;
+  title: string;
+  completed: boolean;
+}
 
 @Component({
   selector: 'app-root',
@@ -7,13 +13,15 @@ import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  name = 'Angular NgModels';
-  appState = 'on';
+  name = 'Angular HttpClient';
+
+  todos: Todo[] = [];
+
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-  }
-
-  handleChange() {
-    console.log(this.appState);
+    this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos?_limit=10').subscribe(response => {
+      this.todos = response;
+    });
   }
 }

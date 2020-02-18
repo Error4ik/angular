@@ -57,6 +57,11 @@ img {
   opacity: 0.8;
 }
 
+.btn.btn-danger {
+  background: red;
+  color: white;
+}
+
 .form-control {
   display: block;
   margin-top: 0.3rem;
@@ -81,6 +86,14 @@ img {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
+}
+
+.card p {
+  display: flex;
+  justify-content: space-between;
+}
+.card p span.completed {
+  text-decoration: line-through;
 }
 
 input,
