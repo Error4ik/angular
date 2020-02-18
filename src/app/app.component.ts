@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {delay} from 'rxjs/operators';
 
 export interface Todo {
   id?: number;
@@ -17,14 +18,15 @@ export class AppComponent implements OnInit {
 
   todoList: Todo[] = [];
 
+  loading = false;
+
   todoTitle = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit(): void {
-    this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos?_limit=10').subscribe(response => {
-      this.todoList = response;
-    });
+    this.fetchTodoList();
   }
 
   addTodo() {
@@ -41,5 +43,15 @@ export class AppComponent implements OnInit {
       this.todoList.push(response);
       this.todoTitle = '';
     });
+  }
+
+  fetchTodoList() {
+    this.loading = true;
+    this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos?_limit=5')
+      .pipe(delay(1500))
+      .subscribe(response => {
+        this.todoList = response;
+        this.loading = false;
+      });
   }
 }
