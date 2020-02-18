@@ -3,13 +3,13 @@
   <hr>
   <div class="card">
     <div class="form-control">
-      <input type="text" placeholder="Title">
+      <input type="text" placeholder="Title" [(ngModel)]="todoTitle">
     </div>
-    <button class="btn">Add</button>
+    <button class="btn" (click)="addTodo()">Add</button>
     <button class="btn">Upload</button>
   </div>
   <hr>
-  <div class="card" *ngFor="let todo of todos">
+  <div class="card" *ngFor="let todo of todoList">
     <p>
       <span [class.completed]="todo.completed">{{todo.title | titlecase}}</span>
       <span>
