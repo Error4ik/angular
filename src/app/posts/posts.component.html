@@ -1,9 +1,9 @@
 <h1>Posts page</h1>
 
-<button class="btn" [routerLink]="['/posts']" [queryParams]="{showId: true}">
+<button class="btn" [routerLink]="['/posts']" [queryParams]="{showId: true}" [fragment]="'fragment'">
   Show Ids
 </button>
-<button class="btn">
+<button class="btn" (click)="showIdProgram()">
   Show Ids (program)
 </button>
 
