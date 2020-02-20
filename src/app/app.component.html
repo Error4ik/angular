@@ -1,34 +1,20 @@
+<nav class="navbar">
+  <h1>
+    <a href="#">{{name}}</a>
+  </h1>
+  <ul>
+    <li class="active">
+      <a href="#">Home</a>
+    </li>
+    <li><a href="#">Posts</a></li>
+    <li><a href="#">About</a></li>
+    <li><button class="btn">Login</button></li>
+    <li><button class="btn">LogOut</button></li>
+  </ul>
+</nav>
+
 <div class="container">
-  <h1>{{name}}</h1>
-  <hr>
   <div class="card">
-    <div class="form-control">
-      <input type="text" placeholder="Title" [(ngModel)]="todoTitle">
-    </div>
-    <button class="btn" (click)="addTodo()">Add</button>
-    <button class="btn" (click)="fetchTodoList()">Upload</button>
+    <router-outlet></router-outlet>
   </div>
-  <hr>
-  <p class="error" *ngIf="error; else todoBlock">{{error}}</p>
-  <ng-template #todoBlock>
-    <div *ngIf="!loading; else loadingBlock">
-      <div *ngIf="todoList.length !== 0; else noTodo">
-        <div class="card" *ngFor="let todo of todoList">
-          <p>
-            <span [class.completed]="todo.completed">{{todo.title | titlecase}}</span>
-            <span>
-        <button class="btn btn-danger" (click)="removeTodo(todo.id)">Remove</button>
-        <button class="btn" [disabled]="todo.completed" (click)="completeTodo(todo.id)">Complete</button>
-      </span>
-          </p>
-        </div>
-      </div>
-      <ng-template #noTodo>
-        <p>Empty list...</p>
-      </ng-template>
-    </div>
-    <ng-template #loadingBlock>
-      <p>Loading...</p>
-    </ng-template>
-  </ng-template>
 </div>
