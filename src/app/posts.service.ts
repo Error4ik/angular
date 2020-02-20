@@ -15,7 +15,7 @@ export class PostsService {
     {id: 4, title: 'Post 4', text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, magnam! 444'}
   ];
 
-  getById(id: number) {
+  getById(id: number): Post {
     return this.posts.find(p => p.id === id);
   }
 }
