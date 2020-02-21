@@ -1,7 +1,18 @@
-<h1>About page</h1>
+<h1 appColor>{{ 'About page' | pageName}}</h1>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, magnam!</p>
+<button class="btn" (click)="read = true">Mark as read</button>
 
-<p><a [routerLink]="['/about', 'extra']">Show Extra</a></p>
+<p [ngStyle]="{color: read ? 'blue' : null}">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium aperiam asperiores assumenda blanditiis
+  culpa dolorem eligendi, excepturi exercitationem illum minima nemo neque praesentium quasi, ut. Alias aut
+  consequatur eum iure laboriosam molestiae nulla perferendis recusandae sapiente similique. At autem dolorem
+  fugiat fugit itaque magni maiores placeat quo sapiente voluptatibus. Aut beatae culpa ex labore suscipit.
+  Accusantium adipisci autem corporis deserunt explicabo fugit impedit iste itaque libero magni minima modi natus
+  neque, numquam obcaecati perspiciatis praesentium quaerat quam ratione saepe sapiente sequi soluta vel? Alias
+  commodi nulla omnis ullam! Ab accusamus delectus dolores eos esse magnam sint totam veniam. Iure.
+</p>
+
+<p><a [routerLink]="['/about', 'extra']">Show more...</a></p>
+<p><a [routerLink]="['/about']">Hide more...</a></p>
 
 <router-outlet></router-outlet>

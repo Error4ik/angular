@@ -1,27 +1,16 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
-import {PostsComponent} from './posts/posts.component';
-import {PostComponent} from './post/post.component';
-import {AboutExtraComponent} from './about-extra/about-extra.component';
-import {ErrorPageComponent} from './error-page/error-page.component';
-import {AuthGuard} from './auth.guard';
-
-const routs: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'about', component: AboutComponent, canActivateChild: [AuthGuard], children: [
-      {path: 'extra', component: AboutExtraComponent}
-    ]
-  },
-  {path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},
-  {path: 'posts/:id', component: PostComponent},
-  {path: 'error', component: ErrorPageComponent},
-  {path: '**', redirectTo: '/error'}
-];
+import {AboutExtraComponent} from './about/about-extra/about-extra.component';
 
 @NgModule({
-  imports: [RouterModule.forRoot(routs)],
+  imports: [RouterModule.forRoot([
+      {path: '', component: HomeComponent, pathMatch: 'full'},
+      {path: 'about', component: AboutComponent, children: [
+          {path: 'extra', component: AboutExtraComponent}]
+      }])
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

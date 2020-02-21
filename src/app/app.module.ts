@@ -1,15 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { AboutExtraComponent } from './about-extra/about-extra.component';
-import { PostComponent } from './post/post.component';
-import { PostsComponent } from './posts/posts.component';
+import {HomeComponent} from './home/home.component';
+import {AboutComponent} from './about/about.component';
+import {AboutExtraComponent} from './about/about-extra/about-extra.component';
 import {AppRoutingModule} from './app-routing.module';
-import { ErrorPageComponent } from './error-page/error-page.component';
+import {ColorDirective} from './shared/color.directive';
+import {PageNamePipe} from './shared/page-name.pipe';
 
 @NgModule({
   declarations: [
@@ -17,9 +16,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     HomeComponent,
     AboutComponent,
     AboutExtraComponent,
-    PostComponent,
-    PostsComponent,
-    ErrorPageComponent
+    ColorDirective,
+    PageNamePipe
   ],
   imports: [
     BrowserModule,
@@ -29,4 +27,5 @@ import { ErrorPageComponent } from './error-page/error-page.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
