@@ -4,25 +4,21 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
 import {HomeComponent} from './home/home.component';
-import {AboutComponent} from './about/about.component';
-import {AboutExtraComponent} from './about/about-extra/about-extra.component';
 import {AppRoutingModule} from './app-routing.module';
-import {ColorDirective} from './shared/color.directive';
-import {PageNamePipe} from './shared/page-name.pipe';
+import {AboutPageModule} from './about/about-page.module';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
-    AboutExtraComponent,
-    ColorDirective,
-    PageNamePipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AboutPageModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
