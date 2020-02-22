@@ -1,14 +1,15 @@
 import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {AboutComponent} from './about.component';
 import {AboutExtraComponent} from './about-extra/about-extra.component';
 
+const routers: Routes = [{
+  path: '', component: AboutComponent, children: [
+    {path: 'extra', component: AboutExtraComponent}]
+}];
+
 @NgModule({
-  imports: [RouterModule.forChild([{
-    path: '', component: AboutComponent, children: [
-      {path: 'extra', component: AboutExtraComponent}]
-  }])
-  ],
+  imports: [RouterModule.forChild(routers)],
   exports: [
     RouterModule
   ]
