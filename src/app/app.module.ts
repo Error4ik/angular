@@ -5,7 +5,6 @@ import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
 import {HomeComponent} from './home/home.component';
 import {AppRoutingModule} from './app-routing.module';
-import {AboutPageModule} from './about/about-page.module';
 import {SharedModule} from './shared/shared.module';
 
 @NgModule({
@@ -17,7 +16,6 @@ import {SharedModule} from './shared/shared.module';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    AboutPageModule,
     SharedModule
   ],
   providers: [],

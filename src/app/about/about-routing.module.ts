@@ -5,7 +5,7 @@ import {AboutExtraComponent} from './about-extra/about-extra.component';
 
 @NgModule({
   imports: [RouterModule.forChild([{
-    path: 'about', component: AboutComponent, children: [
+    path: '', component: AboutComponent, children: [
       {path: 'extra', component: AboutExtraComponent}]
   }])
   ],

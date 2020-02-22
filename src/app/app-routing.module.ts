@@ -4,7 +4,8 @@ import {HomeComponent} from './home/home.component';
 
 @NgModule({
   imports: [RouterModule.forRoot([
-      {path: '', component: HomeComponent, pathMatch: 'full'}
+      {path: '', component: HomeComponent, pathMatch: 'full'},
+      {path: 'about', loadChildren: './about/about-page.module#AboutPageModule'}
     ]
   )],
   exports: [RouterModule]
