@@ -3,20 +3,16 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
-import {HomeComponent} from './home/home.component';
-import {AppRoutingModule} from './app-routing.module';
-import {SharedModule} from './shared/shared.module';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    SharedModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
