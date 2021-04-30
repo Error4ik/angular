@@ -22,11 +22,15 @@
     "acorn": "^7.1.1",
     "ini": "^2.0.0",
     "minimist": "^1.2.5",
+    "node-forge": "^0.10.0",
     "rxjs": "~6.4.0",
+    "socket.io": "^4.0.1",
     "sockjs": "^0.3.21",
     "ssri": "^8.0.1",
     "stockjs": "^1.1.1",
     "tslib": "^1.10.0",
+    "webpack-subresource-integrity": "^1.5.2",
+    "yargs-parser": "^20.2.7",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
